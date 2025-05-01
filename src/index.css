@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  @apply font-sans antialiased;
+}
+
+/* Animation for fade-in elements */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1s ease-out;
+}
+
+/* Custom shadows */
+.custom-shadow {
+  box-shadow: 0 10px 25px -5px rgba(249, 115, 22, 0.1), 0 10px 10px -5px rgba(249, 115, 22, 0.04);
+}
+
+/* Title underline animation */
+.title-underline {
+  position: relative;
+}
+
+.title-underline::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  width: 50px;
+  height: 4px;
+  background-color: #f97316;
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+.title-underline:hover::after {
+  width: 100px;
+}
